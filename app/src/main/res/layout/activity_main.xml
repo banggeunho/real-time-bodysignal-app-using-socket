@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/measure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom" >
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="측정시작"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:background="#000000"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:layout_boxedEdges="all">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/network_status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:bufferType="spannable"
+                android:text="네트워크 상태 : " />
+
+            <TextView
+                android:id="@+id/measure_status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="측정상태 :" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.wear.widget.BoxInsetLayout>
